@@ -1,0 +1,22 @@
+import subprocess
+import tkinter as tk
+
+numi = int(input("Tell me the number: "))
+
+def verifier(numi) -> bool:
+    return numi % 2
+    
+code_content = f"numi = {numi}"
+for l in range(0,numi+1):
+    code_content += f"""
+if numi == {l}:
+    print("{"it is impar" if verifier(l) else "it is par"}")
+"""
+with open("imparpar.py", "w") as file:
+
+    file.write(code_content)
+
+subprocess.run(["python", "imparpar.py"])
+
+print("The document imparpar.py was successfully created!")
+
