@@ -1,0 +1,3 @@
+numi = int(input("Enter a number: "))
+result = "Par" * (numi % 2 == 0) + "Impar" * (numi % 2 != 0)
+print(f"{numi} is {result}")
